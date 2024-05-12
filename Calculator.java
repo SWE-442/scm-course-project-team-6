@@ -50,7 +50,8 @@ public class Calculator {
     }
 
     public static void multiply(double num1, double num2) {
-        // Student Number 3, add your code here
+        double result = num1 * num2;
+        System.out.println("Result: " + result);
     }
 
     public static void divide(double num1, double num2) {
@@ -67,5 +68,11 @@ public class Calculator {
     public void testSubtract() {
         double result = Calculator.subtract(10.0, 4.0);
         assertEquals(6.0, result, 0.0001);
+    }
+
+    @Test
+    public void testMultiply() {
+        double result = Calculator.multiply(3.0, 5.0);
+        assertEquals(15.0, result, 0.0001);
     }
 }
