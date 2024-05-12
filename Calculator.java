@@ -1,6 +1,7 @@
 package com.mycompany.calculator;
 
 import java.util.Scanner;
+import org.junit.Test;
 
 public class Calculator {
     public static void main(String[] args) {
@@ -55,7 +56,12 @@ public class Calculator {
     }
 
     public static void divide(double num1, double num2) {
-        // Student Number 4, add your code here 
+        if (num2 != 0) {
+            double result = num1 / num2;
+            System.out.println("Result: " + result);
+        } else {
+            System.out.println("Cannot divide by zero!");
+        }
     }
 
     @Test
@@ -74,5 +80,16 @@ public class Calculator {
     public void testMultiply() {
         double result = Calculator.multiply(3.0, 5.0);
         assertEquals(15.0, result, 0.0001);
+    }
+
+    @Test
+    public void testDivide() {
+        double result = Calculator.divide(20.0, 4.0);
+        assertEquals(5.0, result, 0.0001);
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void testDivideByZero() {
+        Calculator.divide(10.0, 0.0);
     }
 }
