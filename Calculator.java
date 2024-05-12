@@ -45,7 +45,8 @@ public class Calculator {
     }
 
     public static void subtract(double num1, double num2) {
-        // Student Number 2, add your code here
+        double result = num1 - num2;
+        System.out.println("Result: " + result);
     }
 
     public static void multiply(double num1, double num2) {
@@ -56,9 +57,15 @@ public class Calculator {
         // Student Number 4, add your code here 
     }
 
-  @Test
+    @Test
     public void testAdd() {
         double result = Calculator.add(5.0, 3.0);
         assertEquals(8.0, result, 0.0001);
+    }
+
+    @Test
+    public void testSubtract() {
+        double result = Calculator.subtract(10.0, 4.0);
+        assertEquals(6.0, result, 0.0001);
     }
 }
